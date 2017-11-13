@@ -1,0 +1,50 @@
+<html ng-app="HelloWorldApp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body>
+    <br><br>
+    <div ng-init='
+		albums = [
+			{
+				name: "arielly",
+				date: "05-05-1995",
+				description: "lalalalalalal"
+			},
+			{
+				name: "teste",
+				date: "10-10-1990",
+				description: "blablablabla"
+			}
+		]
+	'>
+        <p>
+            <label>Search for something: </label>
+            <input type="text" placeholder="Type to search..." ng-model="searchFor" size="30" />
+        </p>
+        <br>
+        <p>
+            There are {{ albums.length }} albums avaliable to view:
+        </p>
+        <br>
+        <div class="album panel panel-primary" ng-repeat="album in albums | filter: { name:searchFor } | orderBy: 'date'">
+            <div class="panel-heading">
+                <div style="float: right">{{ album.date }}</div>
+                {{ album.name }}
+            </div>
+            <div class="description">
+                {{ album.description }}
+            </div>
+        </div>
+
+
+</html>
+
+</html>
