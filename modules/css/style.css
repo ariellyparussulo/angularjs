@@ -1,0 +1,29 @@
+body {
+    margin: 30px;
+}
+
+div.album {
+    float: left;
+    width: 300px;
+    margin-right: 10px;
+    min-height: 200px;
+}
+
+div.album div.description {
+    padding: 5px;
+}
+
+.btn {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #eee;
+    text-decoration: none;
+}
