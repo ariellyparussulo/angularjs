@@ -8,7 +8,7 @@
     <div class="album panel panel-primary" ng-repeat="album in albums | filter: { description: searchFor } | orderBy:'date'">
         <div class="panel-heading">
             <div style="float: right">{{ album.date }}</div>
-            <a href="/index.html#/albums/{{ album.title }}">{{ album.title }}</a>
+            <a href="/index.html#/albums/{{ album.name }}">{{ album.title }}</a>
         </div>
         <div class="description">
             {{ album.description }}
