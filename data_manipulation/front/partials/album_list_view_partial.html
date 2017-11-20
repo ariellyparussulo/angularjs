@@ -1,4 +1,7 @@
 <div ng-controller="AlbumListController">
+    <div class="alert alert-danger" ng-show="page_load_error">
+        {{ page_load_error }}
+    </div>
     <p>
         <input type="text" placeholder="Type to search..." ng-model="searchFor" size="30" />
     </p>
