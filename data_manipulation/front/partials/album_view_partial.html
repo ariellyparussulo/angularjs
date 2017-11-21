@@ -1,11 +1,13 @@
 <div ng-controller="AlbumListViewController">
-    <div class="alert alert-danger" ng-show="{{ load_error_text }}">
-        {{ load_error_text }}
-    </div>
-
     <h2>
         {{ album_name }}
     </h2>
+
+    <br>
+
+    <div class="alert alert-danger" ng-show="load_error">
+        {{ load_error }}
+    </div>
 
     <div class="photo thumbnail" style="width: 250px; float: left; margin-right: 10px" ng-repeat="photo in photos">
         <img src="/media/{{ album_name }}/thumb/{{ photo.filename }}" />

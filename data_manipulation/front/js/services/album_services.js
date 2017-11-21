@@ -13,7 +13,7 @@
         }
 
         this.getAlbumByName = function(name, callback) {
-            const PHOTOS_PATH = ROOT_PATH + name + '/photos/filename.json';
+            const PHOTOS_PATH = ROOT_PATH + name + '/photos.json';
             $http.get(PHOTOS_PATH).success(function(data) {
                 callback(null, data);
             }).error(function(error) {
