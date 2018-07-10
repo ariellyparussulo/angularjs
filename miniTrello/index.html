@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/node_modules/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="/node_modules/angular-route/angular-route.js"></script>
+        <script src="/components/board/js/board.js"></script>
+
+        <script src="/js/app.js"></script>
+    </head>
+    <body  ng-app="trello"
+        ng-controller="mainCtrl">
+        <h1 class="title">Mini trello</h1>
+
+        <div style="display: flex">
+            <div class="boards add-boards"
+                ng-click="openNewBoardForm(true, $event)">
+                <div>
+                    <div class="create-board-link">
+                        <h5 class="create-board">Create a New Board...</h5>
+                        <i class="fa fa-times delete"
+                            ng-click="openNewBoardForm(false, $event)"></i>
+                    </div>
+                    <div class="form">
+                        <h6>What shall we call the board?</h6>
+                        <input type="text" 
+                            placeholder="BOARD NAME"
+                            class="form-control"
+                            ng-model="newBoardName" />
+                        <div class="buttons">
+                            <button class="btn btn-link btn-cancel"
+                                ng-click="cancelNewForm($event)">Cancel</button>
+                            <button class="btn btn-light"
+                                ng-click="createNewBoard($event)">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="board in boardList">
+                <board board-path="board.boardPath"
+                    board-name="board.boardName"></board>
+            </div>
+        </div>
+    </body>
+</html>
